@@ -77,7 +77,7 @@ def compute(x, axes=None, f=L2):
     numel  = shape[axis]
     minbuf = np.empty((numel,), dtype=float)
     argbuf = np.empty((numel,), dtype=int)
-    slices = map(xrange, shape)
+    slices = list(map(xrange, shape))
     slices[axis] = [Ellipsis]
 
     for index in itertools.product(*slices):
